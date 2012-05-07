@@ -3,7 +3,7 @@
 * Dependencies: FormHighlighter  2.0.4
 * @version			2.0.4
 * @license			MIT and GPL licenses.
-* @Copyright		 (c) 2009 - 2011 Srdjan Lukic-Bardak
+* @Copyright		 (c) 2009 - 2012 Srdjan Lukic-Bardak
 * @author			Srdjan Lukic-Bardak [ srdjan@lukic.nu ]
 * @docmentation	http://www.saucer.dk/formhighlighter/
 */
