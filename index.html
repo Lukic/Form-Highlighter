@@ -1,0 +1,132 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form Highlighter</title>
+    <!--CSS STYLES-->
+    <link href="css/demoStyles.css" rel="stylesheet" type="text/css" />
+    
+    <!--jQuery core-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <!--Form Highlighter plugin-->
+    <script src="js/jquery.formHighlighter.js" type="text/javascript"></script>
+    
+    <!--Demo examples-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            /*Basic call*/
+            $("#basicCall").formHighlighter();
+
+            /*Calling Form Highlighter with some CSS classes*/
+            $("#stylingCall").formHighlighter({
+                classFocus: 'demoFocus',
+                classBlur: 'demoBlur',
+                classKeyDown: 'demoKeydown',
+                classNotEqualToDefault: 'demoNotEqualToDefault',
+                clearField:false
+            });
+
+            /*Calling your own functions through Form Highlighter*/
+            $("#advancedCall").formHighlighter({
+                classFocus: 'demoFocus',
+                classBlur: 'demoBlur',
+                classKeyDown: 'demoKeydown',
+                classNotEqualToDefault: 'demoNotEqualToDefault',
+                clearField:false,
+                onBlur: function () { demoBlur(); },
+                onFocus: function () { demoFocus($(this)); }
+            });
+
+
+            /*Your own function that will be called from Form Highlighter*/
+            function demoBlur() {
+                $("#advancedCall input.demoBlur:not(input:hidden)").stop(0, 1).fadeTo(500, 1.0);
+            }
+
+            function demoFocus(element) {
+                $("#advancedCall input.demoBlur:not(input:hidden)").stop(0, 1).fadeTo(500, 0.5);
+            }
+
+        });
+
+    
+    </script>
+</head>
+<body>
+ 
+ <h1>Form without Form Highlighter effect</h1>
+  <div id="normalForm">
+    <form action="" name="normalForm">
+        <input class="myclass" type="text" name="NormalYourName" value="Type your name here" /><br />
+        <input class="myclass" type="text" name="NormalYourEmail" value="Type your e-mail here" /><br />
+        <input class="myclass" type="password" name="NormalYourPassword" value="Type your password here" /><br />
+    </form>
+ </div>
+ <h1>Basic Form Hightlighter call</h1>
+ <p>
+     $(&quot;#basicCall&quot;).formHighlighter();
+ </p>
+ <div id="basicCall">
+    <form action="" name="basicCall">
+        <input class="myclass" type="text" name="BasicYourName" value="Type your name here" /><br />
+        <input class="myclass" type="text" name="BasicYourEmail" value="Type your e-mail here" /><br />
+        <input class="myclass" type="password" name="BasicYourPassword" value="Type your password here" /><br />
+    </form>
+ </div>
+
+
+ <h1>Call with CSS Styling</h1>
+ <p>$(&#39;#demo&#39;).formHighlighter( {<br />
+&nbsp;classFocus: &#39;demoFocus&#39;,
+     <br />
+&nbsp;classBlur: &#39;demoBlur&#39;,
+     <br />
+&nbsp;classKeyDown: &#39;demoKeydown&#39;,
+     <br />
+&nbsp;classNotEqualToDefault: &#39;demoNotEqualToDefault&#39;<br />
+     });</p>
+      <div id="stylingCall">
+    <form action="" name="stylingCall">
+        <input class="myclass" type="text" name="StylingYourName" value="Type your name here" /><br />
+        <input class="myclass" type="text" name="StylingYourEmail" value="Type your e-mail here" /><br />
+        <input class="myclass" type="password" name="StylingYourPassword" value="Type your password here" /><br />
+    </form>
+ </div>
+ <h1>Attaching your own functions</h1>
+ <p>$(&quot;#advancedCall&quot;).formHighlighter({
+     <br />
+&nbsp;classFocus: &#39;demoFocus&#39;,
+     <br />
+&nbsp;classBlur: &#39;demoBlur&#39;,
+     <br />
+&nbsp;classKeyDown: &#39;demoKeydown&#39;,
+     <br />
+&nbsp;classNotEqualToDefault: &#39;demoNotEqualToDefault&#39;,
+     <br />
+&nbsp;onBlur: function () { demoBlur(); },
+     <br />
+&nbsp;onFocus: function () { demoFocus($(this)); }
+     <br />
+     });</p>
+   <div id="advancedCall">
+    <form action="" name="advancedCall">
+        <input class="myclass" type="text" name="AdvancedYourName" value="Type your name here" /><br />
+        <input class="myclass" type="text" name="AdvancedYourEmail" value="Type your e-mail here" /><br />
+        <input class="myclass" type="password" name="AdvancedYourPassword" value="Type your password here" /><br />
+    </form>
+ </div>
+ <h1>More info</h1>
+ <p>For more information about Form Highlighter please visit
+     <a href="http://www.saucer.dk/formhighlighter" target="_blank">www.saucer.dk/formhighlighter</a>
+     <br />
+     or follow me on twitter and get the latest news about Form Highlighter
+     <a href="http://www.twitter.com/saucerdk" target="_blank">www.twitter.com/saucerdk</a>
+     <br />
+     <br />
+     <br />
+    </p>
+</body>
+</html>
