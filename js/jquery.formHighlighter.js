@@ -39,6 +39,7 @@
                     if($(this).is("textarea")){ $(this).text(""); }
 
                 }
+                
                 //Without placeholders
                 else{
        
@@ -309,10 +310,6 @@
 
 					}
 
-       
-                    
-                    
-
                     if (opts.onBlur != null) {
                         var onBlur = opts.onBlur || function() { };
                         $(obj).each(onBlur);
@@ -327,6 +324,8 @@
             });
         });
     };
+    
+    //// Definding options
     $.fn.formHighlighter.defaults = {
         classFocus: '',
         classBlur: '',
@@ -344,7 +343,9 @@
 
 
 
-
+//// moveCursorToBegining is used to move the cursor to the begining of inputfield.
+//// But since every broswer has its own life, we need to do some silly checks.
+//// This can be done more sexy, and should be rewritten.
 function moveCursorToBegining(obj,name,webkit,type)
 {
  if (obj.createTextRange) {
@@ -376,15 +377,10 @@ function moveCursorToBegining(obj,name,webkit,type)
                             obj.focus();
    
                         }
-
-
 }
 
 
-
-
 function setRange(obj,type) {
-    //obj = eval("document." + objForm + "." + objName);
     obj.focus();
     if(type ==="password")
     {obj.setSelectionRange(1, 1);}
