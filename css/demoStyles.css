@@ -1,0 +1,56 @@
+body
+{
+    padding:0px 50px;
+    margin:0px;
+    background-color:#ddd;
+    color:#333333;
+    font: 12px Arial, Helvetica, Verdana, San-Serif;
+    text-shadow:0 1px 0 #fff;  
+}
+
+h1
+{
+    font-size:25px;
+    color:#333;
+    line-height:18px;
+    margin-bottom:15px;
+    margin-top:40px;    
+    text-shadow:0 1px 0 #fff; 
+    text-transform:uppercase;
+}
+
+/*Form*/
+
+#stylingCall input, #advancedCall input
+{
+    width:485px;
+    height:50px;
+    margin-bottom:5px;
+    font-size:20px;
+    font-weight:bold;
+    padding-left:15px;
+}
+.demoFocus
+{
+    color:#dddddd;
+    border:1px solid #ffac0b;
+}
+
+
+.demoBlur
+{
+    color:#4a6200;
+    border:1px solid #4a6200;
+}
+
+.demoNotEqualToDefault
+{
+    color:#ffac0b;
+    border:1px solid #ffac0b;
+}
+
+.demoKeydown
+{
+    color:#ffac0b;
+    border:1px solid #ffac0b;
+}
