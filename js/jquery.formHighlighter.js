@@ -165,7 +165,7 @@
 					$(obj).keydown(function(e)
 								{
 								
-									console.log(e.keyCode);
+									//console.log(e.keyCode);
 									if(e.keyCode === 86){
 
 										$(obj).val("");
