@@ -162,6 +162,7 @@
 
 
 					//Keydown handler for Ctrl + v
+					/*
 					$(obj).keydown(function(e)
 								{
 								
@@ -172,7 +173,18 @@
 
 									}
 
-								});
+								});*/
+								
+								
+					var ctrl = false;      
+					$(obj).keyup(function(e) {
+					  if (e.keyCode == 17) ctrl = false;
+					}).keydown(function(e) {
+					  if (e.keyCode == 17) ctrl = true;
+					  if (e.keyCode == 86 && ctrl) {
+					    $(obj).val("");
+					  }
+					});				
 
 
 
